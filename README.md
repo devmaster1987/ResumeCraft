@@ -1,10 +1,12 @@
+![alt text](image.png)
+
 # ResumeCraft
 
 A simple and modern resume builder that helps users create professional CVs with a live preview using HTML, CSS, and JavaScript.
 
 ## 🚀 Live Demo
 
-https://your-live-link-here
+https://devmaster1987.github.io/ResumeCraft/
 
 ## ✨ Features
 
