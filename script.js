@@ -1,4 +1,21 @@
-const fields = ["name", "title", "email", "phone", "location", "summary", "company", "role", "experience", "education", "skills"];
+const fields = [
+    "name",
+    "title",
+    "email",
+    "phone",
+    "location",
+    "summary",
+    "company",
+    "role",
+    "experience",
+    "education",
+    "skills",
+    "projectName",
+    "projectDescription",
+    "certification",
+    "languages"
+];
+
 const resumePage = document.getElementById("resumePage");
 const templateButtons = document.querySelectorAll(".template-btn");
 const downloadBtn = document.getElementById("downloadBtn");
@@ -21,6 +38,20 @@ function updateResume() {
     document.getElementById("rExperience").innerText = document.getElementById("experience").value || "Experience details...";
     document.getElementById("rEducation").innerText = document.getElementById("education").value || "Your Education";
     document.getElementById("rSkills").innerHTML = (document.getElementById("skills").value || "HTML, CSS, JavaScript").split(",").map(skill => `<span>${skill.trim()}</span>`).join("");
+    document.getElementById("rProjectName").innerText =
+        document.getElementById("projectName").value || "Project Name";
+
+    document.getElementById("rProjectDescription").innerText =
+        document.getElementById("projectDescription").value || "Project description...";
+
+    document.getElementById("rCertification").innerText =
+        document.getElementById("certification").value || "Your Certification";
+
+    document.getElementById("rLanguages").innerHTML =
+        (document.getElementById("languages").value || "English")
+            .split(",")
+            .map(language => `<span>${language.trim()}</span>`)
+            .join("");
 }
 function setTemplate(template) {
     resumePage.classList.remove("template-modern", "template-classic");
