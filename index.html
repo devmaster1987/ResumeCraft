@@ -131,10 +131,78 @@
             </div>
           </section>
         </div>
-      </div>
-    </section>
-  </main>
-  <script src="script.js"></script>
-</body>
+        <div class="card">
+          <h3>Personal Information</h3>
 
+          <input id="name" placeholder="Full Name" />
+          <input id="title" placeholder="Professional Title" />
+          <input id="email" placeholder="Email" />
+          <input id="phone" placeholder="Phone" />
+          <input id="location" placeholder="Location" />
+          <h3>Professional Summary</h3>
+          <textarea
+            id="summary"
+            placeholder="Write your professional summary"
+          ></textarea>
+          <h3>Experience</h3>
+          <input id="company" placeholder="Company Name" />
+          <input id="role" placeholder="Job Role" />
+          <textarea
+            id="experience"
+            placeholder="Describe your experience"
+          ></textarea>
+          <h3>Education</h3>
+          <input id="education" placeholder="Degree / Institute" />
+          <h3>Skills</h3>
+          <input id="skills" placeholder="HTML, CSS, JavaScript" />
+        </div>
+      </section>
+      <section class="preview">
+        <h2 class="top-heading">Live Preview</h2>
+        <div id="resume">
+          <div class="resume-page template-modern" id="resumePage">
+            <header class="resume-header">
+              <h1 id="rName">SEBASTIAN BENNETT</h1>
+              <h3 id="rTitle">Professional Accountant</h3>
+              <div class="contact-line" id="rContact">
+                <span>hello@example.com</span>
+                <span>|</span>
+                <span>+123-456-7890</span>
+                <span>|</span>
+                <span>New York City</span>
+              </div>
+            </header>
+            <section>
+              <h2>ABOUT ME</h2>
+              <p id="rSummary">Your professional summary...</p>
+            </section>
+            <section>
+              <h2>EDUCATION</h2>
+              <div class="resume-item">
+                <h3 id="rEducation">Your Education</h3>
+                <span>University Name | Year</span>
+              </div>
+            </section>
+            <section>
+              <h2>WORK EXPERIENCE</h2>
+              <div class="resume-item">
+                <h3 id="rRole">Job Role</h3>
+                <strong id="rCompany">Company Name</strong>
+                <p id="rExperience">Experience details...</p>
+              </div>
+            </section>
+            <section>
+              <h2>SKILLS</h2>
+              <div class="skill-list" id="rSkills">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>
