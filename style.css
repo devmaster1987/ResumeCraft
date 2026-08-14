@@ -222,12 +222,14 @@ textarea {
   font-size: 10px;
   width: max-content;
 }
+
 .template-switcher {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-bottom: 30px;
 }
+
 .template-btn {
   margin-top: 0;
   padding: 10px 20px;
@@ -236,72 +238,88 @@ textarea {
   border: 1px solid #334155;
   box-shadow: none;
 }
+
 .template-btn:hover {
   background: #334155;
   transform: translateY(-2px);
   box-shadow: none;
 }
+
 .template-btn.active {
   background: linear-gradient(135deg, #38bdf8, #0ea5e9);
   color: #020617;
   border-color: #38bdf8;
 }
+
 .template-modern {
   font-family: "Inter", sans-serif;
 }
+
 .template-modern .resume-header {
   text-align: center;
 }
+
 .template-modern section h2 {
   color: #111;
 }
+
 .template-classic {
   font-family: Georgia, "Times New Roman", serif;
   padding: 40px 50px;
 }
+
 .template-classic .resume-header {
   text-align: left;
   border-bottom: 2px solid #111;
   padding-bottom: 18px;
   margin-bottom: 24px;
 }
+
 .template-classic .resume-header h1 {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 32px;
   letter-spacing: 0;
   text-transform: none;
 }
+
 .template-classic .resume-header h3 {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 16px;
 }
+
 .template-classic .contact-line {
   justify-content: flex-start;
   font-family: Georgia, "Times New Roman", serif;
 }
+
 .template-classic section h2 {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 15px;
   letter-spacing: 0;
   border-bottom: 1px solid #111;
 }
+
 .template-classic p,
 .template-classic .resume-item,
 .template-classic .skill-list {
   font-family: Georgia, "Times New Roman", serif;
 }
+
 .template-classic .skill-list span {
   background: transparent;
   padding: 0;
   border-radius: 0;
 }
+
 @media (max-width: 600px) {
   .template-switcher {
     flex-wrap: wrap;
   }
+
   .template-btn {
     flex: 1;
   }
+
   .template-classic {
     padding: 25px;
   }
@@ -317,5 +335,90 @@ textarea {
   .resume-page {
     width: 100%;
     padding: 20px;
+  }
+}
+
+
+
+
+/* =========================
+   PRINT / PDF EXPORT
+========================= */
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+
+  html,
+  body {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    padding: 0;
+    background: #fff !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+
+  .resume-header {
+    display: block !important;
+  }
+
+
+  body>header,
+  .editor,
+  .top-heading {
+    display: none !important;
+  }
+
+  main {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .preview {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #resume {
+    width: 210mm !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .resume-page {
+    width: 210mm !important;
+    min-height: 297mm !important;
+
+    margin: 0 !important;
+    padding: 15mm !important;
+
+    box-shadow: none !important;
+    border: none !important;
+
+    page-break-after: avoid;
+    break-after: avoid-page;
+
+    background: #fff !important;
+  }
+
+  .resume-page section,
+  .resume-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  button {
+    display: none !important;
   }
 }
