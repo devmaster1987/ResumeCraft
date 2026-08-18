@@ -10,20 +10,22 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap"
     rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <header>
     <div class="logo">Resume<span>Craft</span></div>
-    <button id="downloadBtn">Download Resume</button>
+    <button id="downloadBtn"><i class="fas fa-download"></i> Download Resume</button>
   </header>
   <main>
     <section class="editor">
       <h2 class="top-heading">Create Your Resume</h2>
       <div class="template-switcher">
         <button type="button" class="template-btn active" data-template="modern">
-          Modern
+          Modern Pro
         </button>
         <button type="button" class="template-btn" data-template="classic">
           Classic
@@ -31,178 +33,145 @@
       </div>
       <div class="card">
         <h3>Personal Information</h3>
+        <input id="profileImage" type="file" accept="image/*" placeholder="Profile Image" />
         <input id="name" placeholder="Full Name" />
         <input id="title" placeholder="Professional Title" />
         <input id="email" placeholder="Email" />
         <input id="phone" placeholder="Phone" />
         <input id="location" placeholder="Location" />
+
         <h3>Professional Summary</h3>
         <textarea id="summary" placeholder="Write your professional summary"></textarea>
+
         <h3>Experience</h3>
         <input id="company" placeholder="Company Name" />
         <input id="role" placeholder="Job Role" />
+        <input id="workYear" placeholder="Year (e.g., 2022-Present)" />
         <textarea id="experience" placeholder="Describe your experience"></textarea>
+
         <h3>Education</h3>
         <input id="education" placeholder="Degree / Institute" />
-        <h3>Skills</h3>
-        <input id="skills" placeholder="HTML, CSS, JavaScript" />
-        <h3>Projects</h3>
-        <input id="projectName" placeholder="Project Name" />
-        <textarea id="projectDescription" placeholder="Describe your project"></textarea>
+        <input id="educationYear" placeholder="Year" />
 
-        <h3>Certifications</h3>
+        <h3>Skills</h3>
+        <input id="skills" placeholder="Skill 1 (50), Skill 2 (80), Skill 3 (70)" />
+
+        <h3>Certifications & References</h3>
         <input id="certification" placeholder="Certification Name" />
+        <input id="reference" placeholder="Reference Name & Email" />
 
         <h3>Languages</h3>
         <input id="languages" placeholder="English, Spanish, French" />
       </div>
     </section>
 
-
-
-
     <section class="preview">
       <h2 class="top-heading">Live Preview</h2>
-      <div id="resume">
-        <div class="resume-page template-modern" id="resumePage">
-          <header class="resume-header">
-            <h1 id="rName">SEBASTIAN BENNETT</h1>
-            <h3 id="rTitle">Professional Accountant</h3>
-            <div class="contact-line" id="rContact">
-              <span>hello@example.com</span>
-              <span>|</span>
-              <span>+123-456-7890</span>
-              <span>|</span>
-              <span>New York City</span>
-            </div>
-          </header>
-          <section>
-            <h2>ABOUT ME</h2>
-            <p id="rSummary">Your professional summary...</p>
-          </section>
-          <section>
-            <h2>EDUCATION</h2>
-            <div class="resume-item">
-              <h3 id="rEducation">Your Education</h3>
-              <span>University Name | Year</span>
-            </div>
-          </section>
-          <section>
-            <h2>WORK EXPERIENCE</h2>
-            <div class="resume-item">
-              <h3 id="rRole">Job Role</h3>
-              <strong id="rCompany">Company Name</strong>
-              <p id="rExperience">Experience details...</p>
-            </div>
-          </section>
-          <section>
-            <h2>SKILLS</h2>
-            <div class="skill-list" id="rSkills">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-            </div>
-          </section>
-
-
-          <section>
-            <h2>PROJECTS</h2>
-            <div class="resume-item">
-              <h3 id="rProjectName">Project Name</h3>
-              <p id="rProjectDescription">
-                Project description...
-              </p>
-            </div>
-          </section>
-
-          <section>
-            <h2>CERTIFICATIONS</h2>
-            <div class="resume-item">
-              <h3 id="rCertification">
-                Your Certification
-              </h3>
-            </div>
-          </section>
-
-          <section>
-            <h2>LANGUAGES</h2>
-            <div class="skill-list" id="rLanguages">
-              <span>English</span>
-            </div>
-          </section>
-        </div>
-        <div class="card">
-          <h3>Personal Information</h3>
-
-          <input id="name" placeholder="Full Name" />
-          <input id="title" placeholder="Professional Title" />
-          <input id="email" placeholder="Email" />
-          <input id="phone" placeholder="Phone" />
-          <input id="location" placeholder="Location" />
-          <h3>Professional Summary</h3>
-          <textarea
-            id="summary"
-            placeholder="Write your professional summary"
-          ></textarea>
-          <h3>Experience</h3>
-          <input id="company" placeholder="Company Name" />
-          <input id="role" placeholder="Job Role" />
-          <textarea
-            id="experience"
-            placeholder="Describe your experience"
-          ></textarea>
-          <h3>Education</h3>
-          <input id="education" placeholder="Degree / Institute" />
-          <h3>Skills</h3>
-          <input id="skills" placeholder="HTML, CSS, JavaScript" />
-        </div>
-      </section>
-      <section class="preview">
-        <h2 class="top-heading">Live Preview</h2>
-        <div id="resume">
+      <div class="preview-container">
+        <div id="resume" class="resume-template">
           <div class="resume-page template-modern" id="resumePage">
-            <header class="resume-header">
-              <h1 id="rName">SEBASTIAN BENNETT</h1>
-              <h3 id="rTitle">Professional Accountant</h3>
-              <div class="contact-line" id="rContact">
-                <span>hello@example.com</span>
-                <span>|</span>
-                <span>+123-456-7890</span>
-                <span>|</span>
-                <span>New York City</span>
+            <!-- Left Sidebar -->
+            <aside class="resume-sidebar">
+              <!-- Profile Section -->
+              <div class="sidebar-section profile-section">
+                <div class="profile-image" id="profileImagePreview">
+                  <i class="fas fa-user"></i>
+                </div>
               </div>
-            </header>
-            <section>
-              <h2>ABOUT ME</h2>
-              <p id="rSummary">Your professional summary...</p>
-            </section>
-            <section>
-              <h2>EDUCATION</h2>
-              <div class="resume-item">
-                <h3 id="rEducation">Your Education</h3>
-                <span>University Name | Year</span>
+
+              <!-- Contact Section -->
+              <div class="sidebar-section">
+                <h3 class="sidebar-title"><i class="fas fa-phone"></i> CONTACT ME</h3>
+                <div class="contact-info">
+                  <p><strong>Email:</strong></p>
+                  <p id="sContact-email">hello@example.com</p>
+                  <p><strong>Phone:</strong></p>
+                  <p id="sContact-phone">+123-456-7890</p>
+                  <p><strong>Location:</strong></p>
+                  <p id="sContact-location">New York City</p>
+                </div>
               </div>
-            </section>
-            <section>
-              <h2>WORK EXPERIENCE</h2>
-              <div class="resume-item">
-                <h3 id="rRole">Job Role</h3>
-                <strong id="rCompany">Company Name</strong>
-                <p id="rExperience">Experience details...</p>
+
+              <!-- Education Section -->
+              <div class="sidebar-section">
+                <h3 class="sidebar-title"><i class="fas fa-graduation-cap"></i> EDUCATION</h3>
+                <div class="education-item">
+                  <h4 id="sEducation">Your Education</h4>
+                  <p id="sEducationYear">Year</p>
+                </div>
               </div>
-            </section>
-            <section>
-              <h2>SKILLS</h2>
-              <div class="skill-list" id="rSkills">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
+
+              <!-- References Section -->
+              <div class="sidebar-section">
+                <h3 class="sidebar-title"><i class="fas fa-star"></i> REFERENCES</h3>
+                <div class="reference-item">
+                  <p id="sReference">Reference Name & Email</p>
+                </div>
               </div>
-            </section>
+            </aside>
+
+            <!-- Right Content -->
+            <main class="resume-main">
+              <!-- Header -->
+              <header class="resume-header">
+                <h1 id="rName">BRIAN R. BAXTER</h1>
+                <h3 id="rTitle">GRAPHIC & WEB DESIGNER</h3>
+              </header>
+
+              <!-- About Section -->
+              <section class="resume-section">
+                <h2><span class="accent-dot">●</span> ABOUT ME</h2>
+                <p id="rSummary">Your professional summary...</p>
+              </section>
+
+              <!-- Experience Section -->
+              <section class="resume-section">
+                <h2><span class="accent-dot">●</span> JOB EXPERIENCE</h2>
+                <div class="resume-item">
+                  <div class="job-header">
+                    <h3 id="rRole">Job Role</h3>
+                    <span id="rWorkYear" class="year-badge">2022-Present</span>
+                  </div>
+                  <p class="company-name" id="rCompany">Company Name</p>
+                  <p id="rExperience">Experience details...</p>
+                </div>
+              </section>
+
+              <!-- Skills Section with Progress Bars -->
+              <section class="resume-section">
+                <h2><span class="accent-dot">●</span> SKILLS</h2>
+                <div class="skills-container" id="rSkills">
+                  <div class="skill-item">
+                    <div class="skill-header">
+                      <span>HTML5</span>
+                      <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                      <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Certifications Section -->
+              <section class="resume-section">
+                <h2><span class="accent-dot">●</span> CERTIFICATIONS</h2>
+                <p id="rCertification">Your Certification</p>
+              </section>
+
+              <!-- Languages Section -->
+              <section class="resume-section">
+                <h2><span class="accent-dot">●</span> LANGUAGES</h2>
+                <div class="languages-list" id="rLanguages">
+                  <span>English</span>
+                </div>
+              </section>
+            </main>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+  </main>
     <script src="script.js"></script>
   </body>
 </html>
