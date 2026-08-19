@@ -1,4 +1,4 @@
-![alt text](image.png)
+<img width="1920" height="1657" alt="ResumeCraft-ScreenShort" src="https://github.com/user-attachments/assets/c7f904c8-bdce-4124-a72c-06352ede8c08" />
 
 # ResumeCraft
 
@@ -16,6 +16,7 @@ https://devmaster1987.github.io/ResumeCraft/
 - Modern resume design
 - Download/print resume
 - Responsive layout
+
 
 ## 🛠️ Built With
 
