@@ -1,4 +1,4 @@
-<img width="1920" height="1657" alt="ResumeCraft-ScreenShort" src="https://github.com/user-attachments/assets/c7f904c8-bdce-4124-a72c-06352ede8c08" />
+<img width="1920" height="1747" alt="screencapture-devmaster1987-github-io-ResumeCraft-2026-08-19-10_18_24" src="https://github.com/user-attachments/assets/0716ed67-5d1b-4be1-bffc-8f4c96db94d7" />
 
 # ResumeCraft
 
